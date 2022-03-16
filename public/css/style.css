@@ -45,7 +45,7 @@
     float: right;
     position: relative;
     right:20%;
-    top:20%
+    top:15%
 }
 
 .phone_number_pagination_buttons .next_item{
@@ -54,4 +54,12 @@
 
 .phone_number_pagination_buttons .prev_item{
     float: right;
+}
+.phone_number_pagination_buttons a{
+    box-shadow: 2px 3px;
+    color:black;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
