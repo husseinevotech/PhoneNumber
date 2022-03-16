@@ -14,9 +14,9 @@ class PhoneNumberResponseTest extends TestCase
     {
         parent::setUp();
 
-        $this->allRoles = PhoneNumber::all();
+        $this->allPhoneNumbers = PhoneNumber::all();
 
-        $this->allPhoneNumbersInFormat = $this->allRoles->map(fn($role) => $this->phoneNumberFormat($role));
+        $this->allPhoneNumbersInFormat = $this->allPhoneNumbers->map(fn($role) => $this->phoneNumberFormat($role));
     }
 
     public function testPhoneNumberIndexCode200WithFormat()
