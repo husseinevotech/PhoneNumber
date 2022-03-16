@@ -29,3 +29,29 @@
 .phone_number_pagination_buttons{
     float:right;
 }
+.phone_number_pagination_buttons li{
+    margin: 0px 5px 0px 5px;
+    width: 100px;
+}
+
+.phone_number_pagination_buttons .fa-arrow-alt-circle-left{
+    float: left;
+    position: relative;
+    left:10%;
+    bottom:50%
+}
+
+.phone_number_pagination_buttons .fa-arrow-alt-circle-right{
+    float: right;
+    position: relative;
+    right:20%;
+    top:20%
+}
+
+.phone_number_pagination_buttons .next_item{
+    float: left;
+}
+
+.phone_number_pagination_buttons .prev_item{
+    float: right;
+}

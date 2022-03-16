@@ -20002,7 +20002,7 @@ var _hoisted_1 = {
   "class": "phone_number_pagination_buttons"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<nav aria-label=\"...\"><ul class=\"pagination\"><li class=\"page-item disabled\"><span class=\"page-link\">Previous</span></li><li class=\"page-item\"><a class=\"page-link\" href=\"#\">Next</a></li></ul></nav>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<nav aria-label=\"...\"><ul class=\"pagination\"><div><li class=\"previous_item page-item\"><a class=\"page-link btn btn-sm\">Prev</a></li><i class=\"far fa-arrow-alt-circle-left\"></i></div><div><li class=\"next_item page-item\"><a class=\"page-link btn btn-sm\">Next</a></li><i class=\"far fa-arrow-alt-circle-right\"></i></div></ul></nav>", 1);
 
 var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache, $props, $setup, $data, $options) {

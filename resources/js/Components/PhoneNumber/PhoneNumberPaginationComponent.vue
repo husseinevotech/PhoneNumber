@@ -2,13 +2,20 @@
     <div class="phone_number_pagination_buttons">
         <nav aria-label="...">
             <ul class="pagination">
-                <li class="page-item disabled">
-                    <span class="page-link">Previous</span>
-                </li>
+                <div>
+                    <li class="previous_item page-item">
+                        <a class="page-link btn btn-sm">Prev</a>
+                    </li>
+                    <i class='far fa-arrow-alt-circle-left'></i>
+                </div>
 
-                <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                </li>
+                <div>
+                    <li class="next_item page-item">
+                        <a class="page-link btn btn-sm">Next</a>
+                    </li>
+                    <i class='far fa-arrow-alt-circle-right'></i>
+                </div>
+
             </ul>
         </nav>
     </div>
