@@ -9,7 +9,7 @@ use Tests\TestCase;
 
 class PhoneNumberResponseTest extends TestCase
 {
-    // use RefreshDatabase;
+    use RefreshDatabase;
     public function setUp() : void
     {
         parent::setUp();

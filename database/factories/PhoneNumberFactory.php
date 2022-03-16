@@ -13,7 +13,6 @@ class PhoneNumberFactory extends Factory
      */
     public function definition()
     {
-        // dd($this->faker->regexify("(237\) ?[2368]\d{7,8}$"));
         $numbers = [
             [
                 "country" => "Cameroon",
