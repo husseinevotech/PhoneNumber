@@ -19,4 +19,5 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::get("/", [TestController::class, 'test']);
+// Route::get("/", [TestController::class, 'test']);
+Route::view('/{any?}', 'home')->where('any', '.*');
