@@ -19963,7 +19963,9 @@ var _hoisted_1 = {
   "class": "container"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Phone Numbers", -1
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
+  "class": "phone_numbers_title"
+}, "Phone Numbers", -1
 /* HOISTED */
 );
 
@@ -19971,7 +19973,7 @@ var _hoisted_3 = {
   "class": "row phone_filters"
 };
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"phone_number_list_div\"><table class=\"table table-hover table-sm table-borderless table-striped phone_number_list_table\"><thead class=\"thead-dark bg-secondary\"><tr><th scope=\"col\">Country</th><th scope=\"col\">State</th><th scope=\"col\">Country Code</th><th scope=\"col\">Phone Number</th></tr></thead><tbody><tr><th scope=\"row\">1</th><td>Mark</td><td>Otto</td><td>@mdo</td></tr><tr><th scope=\"row\">1</th><td>Mark</td><td>Otto</td><td>@mdo</td></tr></tbody></table></div>", 1);
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"phone_number_list_div\"><table class=\"table table-hover table-sm table-borderless table-striped phone_number_list_table\"><thead class=\"thead-dark bg-secondary\"><tr><th scope=\"col\">Country</th><th scope=\"col\">State</th><th scope=\"col\">Country Code</th><th scope=\"col\">Phone Number</th></tr></thead><tbody><tr><th scope=\"row\">1</th><td>Mark</td><td>Otto</td><td>@mdo</td></tr><tr><th scope=\"row\">1</th><td>Mark</td><td>Otto</td><td>@mdo</td></tr><tr><th scope=\"row\">1</th><td>Mark</td><td>Otto</td><td>@mdo</td></tr><tr><th scope=\"row\">1</th><td>Mark</td><td>Otto</td><td>@mdo</td></tr><tr><th scope=\"row\">1</th><td>Mark</td><td>Otto</td><td>@mdo</td></tr></tbody></table></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_CountryDropDownComponent = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("CountryDropDownComponent");

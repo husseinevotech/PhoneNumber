@@ -1,3 +1,7 @@
+.phone_numbers_title{
+    margin-bottom: 5%;
+}
+
 .phone_number_list_div{
     margin: 10px 0px 0px 0px;
 }
@@ -23,7 +27,7 @@
 }
 
 .phone_number_list_table thead th{
-    background-color: #adadad;
+    background-color: #c2c0c0;
 }
 
 .phone_number_pagination_buttons{

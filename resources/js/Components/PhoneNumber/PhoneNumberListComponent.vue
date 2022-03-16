@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <h1>Phone Numbers</h1>
+        <h1 class="phone_numbers_title">Phone Numbers</h1>
         <div class="row phone_filters">
             <CountryDropDownComponent/>
             <ValidPhoneNumberDropDownComponent/>
@@ -16,6 +16,24 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
                     <tr>
                         <th scope="row">1</th>
                         <td>Mark</td>
