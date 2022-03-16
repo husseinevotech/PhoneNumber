@@ -14,16 +14,16 @@ class PhoneNumberResponseTest extends TestCase
     {
         parent::setUp();
 
+        PhoneNumber::factory()->create();
         $this->allPhoneNumbers = PhoneNumber::all();
-
-        $this->allPhoneNumbersInFormat = $this->allPhoneNumbers->map(fn($role) => $this->phoneNumberFormat($role));
+        $this->allPhoneNumbersInFormat = $this->allPhoneNumbers->map(fn($phoneNumber) => $this->phoneNumberFormat($phoneNumber));
     }
 
     public function testPhoneNumberIndexCode200WithFormat()
     {
         $response = $this->get('/api/phoneNumbers');
         $response->assertOk();
-        $response->assertJson(assertPaginationFormat());
+        $response->assertJson(assertPaginationFormat($this->allPhoneNumbersInFormat->toArray()));
     }
 
     public function phoneNumberFormat($phoneNumber)
