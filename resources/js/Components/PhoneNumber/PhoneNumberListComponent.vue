@@ -1,33 +1,36 @@
 <template>
     <div class="container">
-        <div class="row">
+        <h1>Phone Numbers</h1>
+        <div class="row phone_filters">
             <CountryDropDownComponent/>
             <ValidPhoneNumberDropDownComponent/>
         </div>
-        <table class="table table-striped table-bordered table-hover table-sm">
-            <thead class="thead-dark bg-secondary">
-                <tr>
-                <th scope="col">Country</th>
-                <th scope="col">State</th>
-                <th scope="col">Country Code</th>
-                <th scope="col">Phone Number</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="phone_number_list_div">
+            <table class="table table-hover table-sm table-borderless table-striped phone_number_list_table">
+                <thead class="thead-dark bg-secondary">
+                    <tr>
+                    <th scope="col">Country</th>
+                    <th scope="col">State</th>
+                    <th scope="col">Country Code</th>
+                    <th scope="col">Phone Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </template>
 

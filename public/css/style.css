@@ -1,8 +1,24 @@
-.phone_number_list_table{
-    margin: 0 auto;
-    position: absolute;
-    top: 20%;
-    width: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%)
+.phone_number_list_div{
+    margin: 10px 0px 0px 0px;
 }
+
+.phone_number_list_table{
+    border: 2px solid;
+}
+
+.phone_filters{
+    margin-top: 20px;
+}
+
+.btn{
+    border: 2px solid;
+}
+
+.btn:hover{
+    border: 2px solid;
+}
+
+th,td{
+    border-left: 2px solid;
+}
+
