@@ -1,6 +1,7 @@
 <template>
     <div>
-        <router-view/>
+        phone numbers list
     </div>
-
 </template>
+
+
