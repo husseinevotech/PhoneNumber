@@ -13,11 +13,22 @@ class PhoneNumberFactory extends Factory
      */
     public function definition()
     {
-        return [
-            "country" => "country",
-            'phone_number' => "012321312321",
-            'state' => "ok",
-            'country_code' => "123",
+        // dd($this->faker->regexify("(237\) ?[2368]\d{7,8}$"));
+        $numbers = [
+            [
+                "country" => "Cameroon",
+                "country_code" => "+237",
+                "phone_number" => str_replace(" ", "",$this->faker->regexify("(237\) ?[2368]\d{7,8}$")),
+                "state" => "ok",
+            ],
+            [
+                "country" => "Ethiopia",
+                "country_code" => "+251",
+                "phone_number" => str_replace(" ", "",$this->faker->regexify("(251\) ?[1-59]\d{8}$")),
+                "state" => "ok",
+            ],
         ];
+
+        return $numbers[rand(0, count($numbers)-1)];
     }
 }
