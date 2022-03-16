@@ -18,7 +18,14 @@
     border: 2px solid;
 }
 
-th,td{
+.phone_number_list_table th,td{
     border-left: 2px solid;
 }
 
+.phone_number_list_table thead th{
+    background-color: #adadad;
+}
+
+.phone_number_pagination_buttons{
+    float:right;
+}
