@@ -25,7 +25,14 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files":[
+            "app/Helpers/JsonResponses.php",
+            "app/Helpers/GlobalFunctions.php",
+            "app/Helpers/TestingMethods.php",
+            "app/Helpers/ValidationMethods.php",
+            "app/Helpers/StandardValidations.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
