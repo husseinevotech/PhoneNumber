@@ -1,5 +1,5 @@
 .phone_numbers_title{
-    margin-bottom: 5%;
+    margin: 2% 0% 5% 0%;
 }
 
 .phone_number_list_div{
@@ -12,6 +12,7 @@
 
 .phone_filters{
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .btn{
@@ -24,10 +25,12 @@
 
 .phone_number_list_table th,td{
     border-left: 2px solid;
+    line-height: 40px;
 }
 
 .phone_number_list_table thead th{
-    background-color: #c2c0c0;
+    background-color: #d2d6d6e5;
+    line-height: 100%;
 }
 
 .phone_number_pagination_buttons{
