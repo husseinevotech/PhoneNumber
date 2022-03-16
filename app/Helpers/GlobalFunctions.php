@@ -33,3 +33,10 @@ if(!function_exists("paginatedCollectionFormat")){
     }
  }
 
+
+ //string
+ if(!function_exists("cleanPhoneNumberString")){
+    function cleanPhoneNumberString($phoneNumber) {
+        return preg_replace('/[^0-9]/', '', $phoneNumber);
+    }
+}

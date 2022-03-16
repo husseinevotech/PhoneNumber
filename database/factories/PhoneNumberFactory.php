@@ -17,13 +17,13 @@ class PhoneNumberFactory extends Factory
             [
                 "country" => "Cameroon",
                 "country_code" => "+237",
-                "phone_number" => str_replace(" ", "",$this->faker->regexify("(237\) ?[2368]\d{7,8}$")),
+                "phone_number" => cleanPhoneNumberString($this->faker->regexify("(237\) ?[2368]\d{7,8}$")),
                 "state" => "ok",
             ],
             [
                 "country" => "Ethiopia",
                 "country_code" => "+251",
-                "phone_number" => str_replace(" ", "",$this->faker->regexify("(251\) ?[1-59]\d{8}$")),
+                "phone_number" => cleanPhoneNumberString($this->faker->regexify("(251\) ?[1-59]\d{8}$")),
                 "state" => "ok",
             ],
         ];

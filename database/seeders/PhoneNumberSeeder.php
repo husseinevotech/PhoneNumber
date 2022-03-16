@@ -46,7 +46,6 @@ class PhoneNumberSeeder extends Seeder
         ];
 
         foreach ($numbers as $number) {
-
             $this->createValidPhoneNumber($number);
             $this->createInValidPhoneNumber($number);
         }
@@ -58,7 +57,7 @@ class PhoneNumberSeeder extends Seeder
         $phoneNumber->country = $number['country'];
         $phoneNumber->country_code = $number['country_code'];
         $phoneNumber->state = "ok";
-        $phoneNumber->phone_number = str_replace(" ", "", $this->faker->regexify($number["regex"]));
+        $phoneNumber->phone_number = cleanPhoneNumberString($this->faker->regexify($number["regex"]));
         $phoneNumber->save();
     }
 
@@ -69,11 +68,18 @@ class PhoneNumberSeeder extends Seeder
         $phoneNumber->country_code = $number['country_code'];
         $phoneNumber->state = "nok";
 
+        $phone_number_property = $this->createInValidPhoneNumberProperty($number["regex"]);
+        $phoneNumber->phone_number = cleanPhoneNumberString($phone_number_property);
+
+        $phoneNumber->save();
+    }
+
+    public function createInValidPhoneNumberProperty($regex)
+    {
         $phone_number_property = $this->faker->phoneNumber();
-        while(preg_match($number["regex"], $phone_number_property)){
+        while(preg_match($regex, $phone_number_property)){
             $phone_number_property = $this->faker->phoneNumber();
         }
-        $phoneNumber->phone_number = preg_replace('/[^0-9]/', '', $phone_number_property );
-        $phoneNumber->save();
+        return $phone_number_property;
     }
 }
