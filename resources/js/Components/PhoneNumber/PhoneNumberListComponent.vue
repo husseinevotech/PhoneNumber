@@ -15,36 +15,12 @@
                         <th scope="col">Phone Number</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody v-for="phoneNumber in phoneNumbers.data" :key="phoneNumber.id">
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <th scope="row">{{ phoneNumber.country }}</th>
+                        <td>{{ phoneNumber.state }}</td>
+                        <td>{{ phoneNumber.country_code }}</td>
+                        <td>{{ phoneNumber.phone_number }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -60,7 +36,19 @@ import CountryDropDownComponent from '@/components/PhoneNumber/CountryDropDownCo
 import ValidPhoneNumberDropDownComponent from '@/components/PhoneNumber/ValidPhoneNumberDropDownComponent.vue';
 import PhoneNumberPaginationComponent from '@/components/PhoneNumber/PhoneNumberPaginationComponent.vue';
 
+import usephoneNumbers from '../../composables/phoneNumbers'
+import { onMounted } from 'vue';
+
 export default {
+    setup() {
+        const { phoneNumbers, getPhoneNumbers } = usephoneNumbers()
+
+        onMounted(getPhoneNumbers)
+
+        return {
+            phoneNumbers,
+        }
+    },
     components:{
         CountryDropDownComponent,
         ValidPhoneNumberDropDownComponent,
