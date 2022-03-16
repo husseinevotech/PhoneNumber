@@ -9,11 +9,14 @@ use Illuminate\Database\Seeder;
 
 class PhoneNumberSeeder extends Seeder
 {
+    protected $faker;
+
+    public function __construct(){
+        $this->faker = \Faker\Factory::create();
+    }
 
     public function run()
     {
-
-        $faker = \Faker\Factory::create();
         $numbers = [
             [
                 "country" => "Cameroon",
@@ -44,33 +47,33 @@ class PhoneNumberSeeder extends Seeder
 
         foreach ($numbers as $number) {
 
-            $this->createValidPhoneNumber($number, $faker);
-            $this->createInValidPhoneNumber($number, $faker);
+            $this->createValidPhoneNumber($number);
+            $this->createInValidPhoneNumber($number);
         }
     }
 
-    public function createValidPhoneNumber($number, $faker)
+    public function createValidPhoneNumber($number)
     {
         $phoneNumber = new PhoneNumber();
         $phoneNumber->country = $number['country'];
         $phoneNumber->country_code = $number['country_code'];
         $phoneNumber->state = "ok";
-        $phoneNumber->phone_number = str_replace(" ", "",$faker->regexify($number["regex"]));
+        $phoneNumber->phone_number = str_replace(" ", "", $this->faker->regexify($number["regex"]));
         $phoneNumber->save();
     }
 
-    public function createInValidPhoneNumber($number, $faker)
+    public function createInValidPhoneNumber($number)
     {
         $phoneNumber = new PhoneNumber();
         $phoneNumber->country = $number['country'];
         $phoneNumber->country_code = $number['country_code'];
         $phoneNumber->state = "nok";
 
-        $phone_number_property = $faker->phoneNumber();
+        $phone_number_property = $this->faker->phoneNumber();
         while(preg_match($number["regex"], $phone_number_property)){
-            $phone_number_property = $faker->phoneNumber();
+            $phone_number_property = $this->faker->phoneNumber();
         }
-        $phoneNumber->phone_number = preg_replace( '/[^0-9]/', '', $phone_number_property );
+        $phoneNumber->phone_number = preg_replace('/[^0-9]/', '', $phone_number_property );
         $phoneNumber->save();
     }
 }
