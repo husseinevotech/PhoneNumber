@@ -65,12 +65,8 @@ npm install
 npm run dev
 ```
 
-> Create sqlite database file for production in database folder file
-> Create sqlite database file for testing in database folder file
-
-``` bash
-
-```
+### Create sqlite database file for production in database folder file
+### Create sqlite database file for testing in database folder file
 
 
 > Create .env file
