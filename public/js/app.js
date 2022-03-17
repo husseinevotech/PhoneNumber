@@ -19922,6 +19922,7 @@ __webpack_require__.r(__webpack_exports__);
     var _usephoneNumbers = (0,_composables_phoneNumbers__WEBPACK_IMPORTED_MODULE_3__["default"])(),
         phoneNumbers = _usephoneNumbers.phoneNumbers,
         getPhoneNumbers = _usephoneNumbers.getPhoneNumbers,
+        getPhoneNumbersFilterByCountry = _usephoneNumbers.getPhoneNumbersFilterByCountry,
         isLastPage = _usephoneNumbers.isLastPage,
         isFirstPage = _usephoneNumbers.isFirstPage;
 
@@ -19930,7 +19931,8 @@ __webpack_require__.r(__webpack_exports__);
       phoneNumbers: phoneNumbers,
       isLastPage: isLastPage,
       isFirstPage: isFirstPage,
-      getPhoneNumbers: getPhoneNumbers
+      getPhoneNumbers: getPhoneNumbers,
+      getPhoneNumbersFilterByCountry: getPhoneNumbersFilterByCountry
     };
   },
   methods: {
@@ -19948,10 +19950,9 @@ __webpack_require__.r(__webpack_exports__);
         getPhoneNumbers(this.meta.current_page - 1);
       }
     },
-    filterCountry: function filterCountry(getPhoneNumbers, country) {
-      var query = "&filter[country]=" + country;
+    filterCountry: function filterCountry(getPhoneNumbersFilterByCountry, country) {
       this.country = country == "" ? "Select Country" : country;
-      getPhoneNumbers(1, query);
+      getPhoneNumbersFilterByCountry(country);
     }
   },
   computed: {
@@ -20209,12 +20210,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
     onClick: _cache[0] || (_cache[0] = function ($event) {
-      return $options.filterCountry($setup.getPhoneNumbers, "");
+      return $options.filterCountry($setup.getPhoneNumbersFilterByCountry, "");
     })
   }, _hoisted_8), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($options.countries, function (country) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
       onClick: function onClick($event) {
-        return $options.filterCountry($setup.getPhoneNumbers, country);
+        return $options.filterCountry($setup.getPhoneNumbersFilterByCountry, country);
       },
       key: country
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(country), 1
@@ -20461,7 +20462,6 @@ function useCompanies() {
   var getPhoneNumbers = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
       var page,
-          query,
           response,
           _args = arguments;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
@@ -20469,16 +20469,15 @@ function useCompanies() {
           switch (_context.prev = _context.next) {
             case 0:
               page = _args.length > 0 && _args[0] !== undefined ? _args[0] : 1;
-              query = _args.length > 1 && _args[1] !== undefined ? _args[1] : "";
-              _context.next = 4;
-              return axios__WEBPACK_IMPORTED_MODULE_2___default().get('/api/phoneNumbers?page=' + page + query);
+              _context.next = 3;
+              return axios__WEBPACK_IMPORTED_MODULE_2___default().get('/api/phoneNumbers?page=' + page);
 
-            case 4:
+            case 3:
               response = _context.sent;
               phoneNumbers.value = response.data.data;
               checkPages(response);
 
-            case 7:
+            case 6:
             case "end":
               return _context.stop();
           }
@@ -20488,6 +20487,34 @@ function useCompanies() {
 
     return function getPhoneNumbers() {
       return _ref.apply(this, arguments);
+    };
+  }();
+
+  var getPhoneNumbersFilterByCountry = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(country) {
+      var response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.next = 2;
+              return axios__WEBPACK_IMPORTED_MODULE_2___default().get('/api/phoneNumbers?filter[country]=' + country);
+
+            case 2:
+              response = _context2.sent;
+              phoneNumbers.value = response.data.data;
+              checkPages(response);
+
+            case 5:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+
+    return function getPhoneNumbersFilterByCountry(_x) {
+      return _ref2.apply(this, arguments);
     };
   }();
 
@@ -20509,6 +20536,7 @@ function useCompanies() {
     errors: errors,
     phoneNumbers: phoneNumbers,
     getPhoneNumbers: getPhoneNumbers,
+    getPhoneNumbersFilterByCountry: getPhoneNumbersFilterByCountry,
     isLastPage: isLastPage,
     isFirstPage: isFirstPage
   };

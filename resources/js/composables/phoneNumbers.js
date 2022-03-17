@@ -10,8 +10,14 @@ export default function useCompanies() {
     const errors = ref('')
     // const router = useRouter()
 
-    const getPhoneNumbers = async (page = 1, query = "") => {
-        let response = await axios.get('/api/phoneNumbers?page='+page+query)
+    const getPhoneNumbers = async (page = 1) => {
+        let response = await axios.get('/api/phoneNumbers?page='+page)
+        phoneNumbers.value = response.data.data
+        checkPages(response);
+    }
+
+    const getPhoneNumbersFilterByCountry = async (country) => {
+        let response = await axios.get('/api/phoneNumbers?filter[country]='+country)
         phoneNumbers.value = response.data.data
         checkPages(response);
     }
@@ -33,6 +39,7 @@ export default function useCompanies() {
         errors,
         phoneNumbers,
         getPhoneNumbers,
+        getPhoneNumbersFilterByCountry,
         isLastPage,
         isFirstPage,
     }

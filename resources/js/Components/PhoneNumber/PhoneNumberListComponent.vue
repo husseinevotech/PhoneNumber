@@ -9,8 +9,8 @@
                 </a>
 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li @click="filterCountry(getPhoneNumbers, ``)" ><a class="dropdown-item" href="#">All</a></li>
-                    <li @click="filterCountry(getPhoneNumbers, country)" v-for="country in countries" :key="country"><a class="dropdown-item" href="#">{{country}}</a></li>
+                    <li @click="filterCountry(getPhoneNumbersFilterByCountry, ``)" ><a class="dropdown-item" href="#">All</a></li>
+                    <li @click="filterCountry(getPhoneNumbersFilterByCountry, country)" v-for="country in countries" :key="country"><a class="dropdown-item" href="#">{{country}}</a></li>
                 </ul>
             </div>
 
@@ -76,7 +76,7 @@ import { onMounted } from 'vue';
 
 export default {
     setup() {
-        const { phoneNumbers, getPhoneNumbers, isLastPage, isFirstPage } = usephoneNumbers()
+        const { phoneNumbers, getPhoneNumbers, getPhoneNumbersFilterByCountry, isLastPage, isFirstPage } = usephoneNumbers()
 
         onMounted(getPhoneNumbers)
 
@@ -84,7 +84,8 @@ export default {
             phoneNumbers,
             isLastPage,
             isFirstPage,
-            getPhoneNumbers
+            getPhoneNumbers,
+            getPhoneNumbersFilterByCountry
         }
     },
     methods:{
@@ -100,10 +101,9 @@ export default {
                 getPhoneNumbers(this.meta.current_page-1);
             }
         },
-        filterCountry(getPhoneNumbers, country){
-            let query = "&filter[country]="+country;
+        filterCountry(getPhoneNumbersFilterByCountry, country){
             this.country = country == "" ? "Select Country" : country;
-            getPhoneNumbers(1, query);
+            getPhoneNumbersFilterByCountry(country);
         }
     },
     computed:{
