@@ -32,16 +32,16 @@
         <div class="phone_number_pagination_buttons">
             <nav aria-label="...">
                 <ul class="pagination">
-                    <div @click="previousButton(getPhoneNumbers)">
-                        <li class="btn btn-sm page-link previous_item page-item d-flex">
+                    <div >
+                        <li @click="previousButton(getPhoneNumbers)" :class="{unClickable :isFirstPage}" class="btn btn-sm page-link previous_item page-item d-flex">
                             <i class='far fa-arrow-alt-circle-left'></i>
                             <a>Prev</a>
                         </li>
 
                     </div>
 
-                    <div @click="nextButton(getPhoneNumbers)">
-                        <li class="btn btn-sm page-link next_item page-item d-flex">
+                    <div>
+                        <li @click="nextButton(getPhoneNumbers)" :class="{unClickable :isLastPage}" class="btn btn-sm page-link next_item page-item d-flex">
                             <a>Next</a>
                             <i class='far fa-arrow-alt-circle-right'></i>
                         </li>
@@ -65,12 +65,14 @@ import { onMounted } from 'vue';
 
 export default {
     setup() {
-        const { phoneNumbers, getPhoneNumbers } = usephoneNumbers()
+        const { phoneNumbers, getPhoneNumbers, isLastPage, isFirstPage } = usephoneNumbers()
 
         onMounted(getPhoneNumbers)
 
         return {
             phoneNumbers,
+            isLastPage,
+            isFirstPage,
             getPhoneNumbers
         }
     },
@@ -95,6 +97,9 @@ export default {
     },
     data(){
         let meta = [];
+        return {
+            meta
+        }
     }
 }
 
