@@ -44,7 +44,7 @@ A Single Page Application That Lists Phone Numbers
 > Download Project
 
 ``` bash
-https://github.com/hussienhewehii/PhoneNumber.git
+git clone https://github.com/hussienhewehii/PhoneNumber.git
 ```
 
 > Install Composer Packages
