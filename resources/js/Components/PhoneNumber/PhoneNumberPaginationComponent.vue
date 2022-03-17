@@ -9,7 +9,7 @@
                     <i class='far fa-arrow-alt-circle-left'></i>
                 </div>
 
-                <div @click="nextButton">
+                <div @click="nextButton(getPhoneNumbers)">
                     <li class="next_item page-item">
                         <a class="page-link btn btn-sm">Next</a>
                     </li>
@@ -23,13 +23,26 @@
 
 
 <script>
+import { onMounted } from '@vue/runtime-core'
+import usephoneNumbers from '../../composables/phoneNumbers'
 export default {
+    setup() {
+        const { phoneNumbers, getPhoneNumbers } = usephoneNumbers()
+
+        onMounted(getPhoneNumbers)
+
+        return {
+            getPhoneNumbers,
+            phoneNumbers,
+        }
+    },
     props:[
-        "phoneNumbersMeta"
+        "phoneNumbers"
     ],
     methods:{
-        nextButton(){
-            console.log(this.phoneNumbersMeta);
+        nextButton(getPhoneNumbers){
+            console.log(this.phoneNumbers);
+            getPhoneNumbers(2)
         }
     }
 }

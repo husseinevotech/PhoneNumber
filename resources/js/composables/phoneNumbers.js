@@ -8,8 +8,8 @@ export default function useCompanies() {
     const errors = ref('')
     // const router = useRouter()
 
-    const getPhoneNumbers = async () => {
-        let response = await axios.get('/api/phoneNumbers')
+    const getPhoneNumbers = async (page = 1) => {
+        let response = await axios.get('/api/phoneNumbers?page='+page)
         phoneNumbers.value = response.data.data
     }
 

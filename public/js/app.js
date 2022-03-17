@@ -19857,13 +19857,33 @@ __webpack_require__.r(__webpack_exports__);
 
     (0,vue__WEBPACK_IMPORTED_MODULE_4__.onMounted)(getPhoneNumbers);
     return {
-      phoneNumbers: phoneNumbers
+      phoneNumbers: phoneNumbers,
+      getPhoneNumbers: getPhoneNumbers
     };
+  },
+  methods: {
+    nextButton: function nextButton(getPhoneNumbers) {
+      this.meta = this.phoneNumbers.meta;
+
+      if (this.meta.current_page < this.meta.last_page) {
+        getPhoneNumbers(this.meta.current_page + 1);
+      }
+    },
+    previousButton: function previousButton(getPhoneNumbers) {
+      this.meta = this.phoneNumbers.meta;
+
+      if (this.meta.current_page > 1) {
+        getPhoneNumbers(this.meta.current_page - 1);
+      }
+    }
   },
   components: {
     CountryDropDownComponent: _components_PhoneNumber_CountryDropDownComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     ValidPhoneNumberDropDownComponent: _components_PhoneNumber_ValidPhoneNumberDropDownComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     PhoneNumberPaginationComponent: _components_PhoneNumber_PhoneNumberPaginationComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  data: function data() {
+    var meta = [];
   }
 });
 
@@ -19880,11 +19900,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _vue_runtime_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @vue/runtime-core */ "./node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js");
+/* harmony import */ var _composables_phoneNumbers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../composables/phoneNumbers */ "./resources/js/composables/phoneNumbers.js");
+
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ["phoneNumbersMeta"],
+  setup: function setup() {
+    var _usephoneNumbers = (0,_composables_phoneNumbers__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+        phoneNumbers = _usephoneNumbers.phoneNumbers,
+        getPhoneNumbers = _usephoneNumbers.getPhoneNumbers;
+
+    (0,_vue_runtime_core__WEBPACK_IMPORTED_MODULE_1__.onMounted)(getPhoneNumbers);
+    return {
+      getPhoneNumbers: getPhoneNumbers,
+      phoneNumbers: phoneNumbers
+    };
+  },
+  props: ["phoneNumbers"],
   methods: {
-    nextButton: function nextButton() {
-      console.log(this.phoneNumbersMeta);
+    nextButton: function nextButton(getPhoneNumbers) {
+      console.log(this.phoneNumbers);
+      getPhoneNumbers(2);
     }
   }
 });
@@ -20015,6 +20051,8 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "thead-dark bg-secondary"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
   scope: "col"
+}, "ID"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+  scope: "col"
 }, "Country"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
   scope: "col"
 }, "State"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
@@ -20028,17 +20066,61 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 var _hoisted_7 = {
   scope: "row"
 };
+var _hoisted_8 = {
+  scope: "row"
+};
+var _hoisted_9 = {
+  "class": "phone_number_pagination_buttons"
+};
+var _hoisted_10 = {
+  "aria-label": "..."
+};
+var _hoisted_11 = {
+  "class": "pagination"
+};
+
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+  "class": "previous_item page-item"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  "class": "page-link btn btn-sm"
+}, "Prev")], -1
+/* HOISTED */
+);
+
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "far fa-arrow-alt-circle-left"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_14 = [_hoisted_12, _hoisted_13];
+
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+  "class": "next_item page-item"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  "class": "page-link btn btn-sm"
+}, "Next")], -1
+/* HOISTED */
+);
+
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "far fa-arrow-alt-circle-right"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_17 = [_hoisted_15, _hoisted_16];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_CountryDropDownComponent = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("CountryDropDownComponent");
 
   var _component_ValidPhoneNumberDropDownComponent = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ValidPhoneNumberDropDownComponent");
 
-  var _component_PhoneNumberPaginationComponent = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("PhoneNumberPaginationComponent");
-
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_CountryDropDownComponent), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ValidPhoneNumberDropDownComponent)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_5, [_hoisted_6, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.phoneNumbers.data, function (phoneNumber) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tbody", {
       key: phoneNumber.id
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(phoneNumber.country), 1
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(phoneNumber.id), 1
+    /* TEXT */
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(phoneNumber.country), 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(phoneNumber.state), 1
     /* TEXT */
@@ -20049,11 +20131,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     )])]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_PhoneNumberPaginationComponent, {
-    phoneNumbersMeta: $setup.phoneNumbers.meta
-  }, null, 8
-  /* PROPS */
-  , ["phoneNumbersMeta"])]);
+  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <PhoneNumberPaginationComponent :phoneNumbers=\"phoneNumbers\"/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    onClick: _cache[0] || (_cache[0] = function ($event) {
+      return $options.previousButton($setup.getPhoneNumbers);
+    })
+  }, _hoisted_14), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    onClick: _cache[1] || (_cache[1] = function ($event) {
+      return $options.nextButton($setup.getPhoneNumbers);
+    })
+  }, _hoisted_17)])])])]);
 }
 
 /***/ }),
@@ -20108,8 +20194,8 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 var _hoisted_7 = [_hoisted_5, _hoisted_6];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    onClick: _cache[0] || (_cache[0] = function () {
-      return $options.nextButton && $options.nextButton.apply($options, arguments);
+    onClick: _cache[0] || (_cache[0] = function ($event) {
+      return $options.nextButton($setup.getPhoneNumbers);
     })
   }, _hoisted_7)])])]);
 }
@@ -20253,19 +20339,22 @@ function useCompanies() {
 
   var getPhoneNumbers = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-      var response;
+      var page,
+          response,
+          _args = arguments;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
-              return axios__WEBPACK_IMPORTED_MODULE_2___default().get('/api/phoneNumbers');
+              page = _args.length > 0 && _args[0] !== undefined ? _args[0] : 1;
+              _context.next = 3;
+              return axios__WEBPACK_IMPORTED_MODULE_2___default().get('/api/phoneNumbers?page=' + page);
 
-            case 2:
+            case 3:
               response = _context.sent;
               phoneNumbers.value = response.data.data;
 
-            case 4:
+            case 5:
             case "end":
               return _context.stop();
           }

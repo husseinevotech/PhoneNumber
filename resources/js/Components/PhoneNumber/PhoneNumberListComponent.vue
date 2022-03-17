@@ -9,6 +9,7 @@
             <table class="table table-hover table-sm table-borderless table-striped phone_number_list_table">
                 <thead class="thead-dark bg-secondary">
                     <tr>
+                        <th scope="col">ID</th>
                         <th scope="col">Country</th>
                         <th scope="col">State</th>
                         <th scope="col">Country Code</th>
@@ -17,6 +18,7 @@
                 </thead>
                 <tbody v-for="phoneNumber in phoneNumbers.data" :key="phoneNumber.id">
                     <tr>
+                        <th scope="row">{{ phoneNumber.id }}</th>
                         <th scope="row">{{ phoneNumber.country }}</th>
                         <td>{{ phoneNumber.state }}</td>
                         <td>{{ phoneNumber.country_code }}</td>
@@ -26,7 +28,27 @@
             </table>
         </div>
 
-        <PhoneNumberPaginationComponent :phoneNumbersMeta="phoneNumbers.meta"/>
+        <!-- <PhoneNumberPaginationComponent :phoneNumbers="phoneNumbers"/> -->
+        <div class="phone_number_pagination_buttons">
+            <nav aria-label="...">
+                <ul class="pagination">
+                    <div @click="previousButton(getPhoneNumbers)">
+                        <li class="previous_item page-item">
+                            <a class="page-link btn btn-sm">Prev</a>
+                        </li>
+                        <i class='far fa-arrow-alt-circle-left'></i>
+                    </div>
+
+                    <div @click="nextButton(getPhoneNumbers)">
+                        <li class="next_item page-item">
+                            <a class="page-link btn btn-sm">Next</a>
+                        </li>
+                        <i class='far fa-arrow-alt-circle-right'></i>
+                    </div>
+
+                </ul>
+            </nav>
+        </div>
 
     </div>
 </template>
@@ -48,12 +70,30 @@ export default {
 
         return {
             phoneNumbers,
+            getPhoneNumbers
+        }
+    },
+    methods:{
+        nextButton(getPhoneNumbers){
+            this.meta = this.phoneNumbers.meta
+            if(this.meta.current_page < this.meta.last_page){
+                getPhoneNumbers(this.meta.current_page+1);
+            }
+        },
+        previousButton(getPhoneNumbers){
+            this.meta = this.phoneNumbers.meta
+            if(this.meta.current_page > 1){
+                getPhoneNumbers(this.meta.current_page-1);
+            }
         }
     },
     components:{
         CountryDropDownComponent,
         ValidPhoneNumberDropDownComponent,
         PhoneNumberPaginationComponent
+    },
+    data(){
+        let meta = [];
     }
 }
 
