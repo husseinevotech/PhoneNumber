@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource("phoneNumbers", PhoneNumberController::class)->only("index");
+Route::get("phoneNumbers/countries", [PhoneNumberController::class, 'getCountries']);

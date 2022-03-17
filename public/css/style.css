@@ -38,27 +38,6 @@
     justify-content: end;
 }
 
-/* .phone_number_pagination_buttons .fa-arrow-alt-circle-left{
-    float: left;
-    position: relative;
-    left:10%;
-    bottom:50%
-} */
-
-/* .phone_number_pagination_buttons .fa-arrow-alt-circle-right{
-    float: right;
-    position: relative;
-    right:20%;
-    top:15%
-}
-
-.phone_number_pagination_buttons .next_item{
-    float: left;
-} */
-
-/* .phone_number_pagination_buttons .prev_item{
-    float: right;
-} */
 .phone_number_pagination_buttons li{
     box-shadow: 2px 3px;
     color:black;

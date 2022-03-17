@@ -26,6 +26,12 @@ class PhoneNumberResponseTest extends TestCase
         $response->assertJson(assertPaginationFormat($this->allPhoneNumbersInFormat->toArray()));
     }
 
+    public function testCountriesIndexCode200WithFormat()
+    {
+        $response = $this->get('/api/phoneNumbers/countries');
+        $response->assertOk();
+    }
+
     public function phoneNumberFormat($phoneNumber)
     {
         return [

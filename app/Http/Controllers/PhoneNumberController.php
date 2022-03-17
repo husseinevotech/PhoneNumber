@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\PhoneNumber\PhoneNumberResource;
 use App\Models\PhoneNumber;
+use App\Repositories\PhoneNumber\PhoneNumberRepository;
 use Illuminate\Http\Request;
 
 class PhoneNumberController extends Controller
@@ -13,53 +14,19 @@ class PhoneNumberController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    protected $phoneNumberRepository;
+
+    public function __construct(PhoneNumberRepository $phoneNumberRepository){
+        $this->phoneNumberRepository = $phoneNumberRepository;
+    }
+
     public function index()
     {
-        return ok_response(paginatedCollectionFormat(PhoneNumberResource::class, PhoneNumber::paginate(10)));
+        return ok_response(paginatedCollectionFormat(PhoneNumberResource::class, $this->phoneNumberRepository->getPhoneNumbersPaginated()));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function getCountries()
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\PhoneNumber  $phoneNumber
-     * @return \Illuminate\Http\Response
-     */
-    public function show(PhoneNumber $phoneNumber)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PhoneNumber  $phoneNumber
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, PhoneNumber $phoneNumber)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\PhoneNumber  $phoneNumber
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(PhoneNumber $phoneNumber)
-    {
-        //
+        return ok_response($this->phoneNumberRepository->getAllCounrties());
     }
 }
