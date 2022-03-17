@@ -8,12 +8,14 @@ Hussein El-Hewehii, PHP Full-Stack Developer with 3 years experience:
 ## Project Descrption
 
 A Single Page Application That Lists Phone Numbers
-- Categorized By: [
+- Categorized By: 
     -   Country Name, 
     -   Country Code, 
     -   State(Valid or InValid),
-    -   Number]
-- Filters By(Country Name, State).
+    -   Number
+- Filters By:
+    - Country Name
+    - State
 - Pagination.
 
 
