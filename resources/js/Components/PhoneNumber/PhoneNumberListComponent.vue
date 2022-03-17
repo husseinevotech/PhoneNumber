@@ -9,7 +9,7 @@
                 </a>
 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li @click="filterCountry(getPhoneNumbersFilterByCountry, ``)" ><a class="dropdown-item" href="#">All</a></li>
+                    <li @click="getAllPhoneNumbers(getPhoneNumbers)" ><a class="dropdown-item" href="#">All</a></li>
                     <li @click="filterCountry(getPhoneNumbersFilterByCountry, country)" v-for="country in countries" :key="country"><a class="dropdown-item" href="#">{{country}}</a></li>
                 </ul>
             </div>
@@ -102,8 +102,12 @@ export default {
             }
         },
         filterCountry(getPhoneNumbersFilterByCountry, country){
-            this.country = country == "" ? "Select Country" : country;
+            this.country = country;
             getPhoneNumbersFilterByCountry(country);
+        },
+        getAllPhoneNumbers(getPhoneNumbers){
+            this.country = "Select Country";
+            getPhoneNumbers();
         }
     },
     computed:{

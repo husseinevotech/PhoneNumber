@@ -19951,8 +19951,12 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     filterCountry: function filterCountry(getPhoneNumbersFilterByCountry, country) {
-      this.country = country == "" ? "Select Country" : country;
+      this.country = country;
       getPhoneNumbersFilterByCountry(country);
+    },
+    getAllPhoneNumbers: function getAllPhoneNumbers(getPhoneNumbers) {
+      this.country = "Select Country";
+      getPhoneNumbers();
     }
   },
   computed: {
@@ -20210,7 +20214,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
     onClick: _cache[0] || (_cache[0] = function ($event) {
-      return $options.filterCountry($setup.getPhoneNumbersFilterByCountry, "");
+      return $options.getAllPhoneNumbers($setup.getPhoneNumbers);
     })
   }, _hoisted_8), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($options.countries, function (country) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
