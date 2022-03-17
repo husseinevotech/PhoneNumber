@@ -19922,7 +19922,7 @@ __webpack_require__.r(__webpack_exports__);
     var _usephoneNumbers = (0,_composables_phoneNumbers__WEBPACK_IMPORTED_MODULE_3__["default"])(),
         phoneNumbers = _usephoneNumbers.phoneNumbers,
         getPhoneNumbers = _usephoneNumbers.getPhoneNumbers,
-        getPhoneNumbersFilterByCountry = _usephoneNumbers.getPhoneNumbersFilterByCountry,
+        getPhoneNumbersFiltered = _usephoneNumbers.getPhoneNumbersFiltered,
         isLastPage = _usephoneNumbers.isLastPage,
         isFirstPage = _usephoneNumbers.isFirstPage;
 
@@ -19932,7 +19932,7 @@ __webpack_require__.r(__webpack_exports__);
       isLastPage: isLastPage,
       isFirstPage: isFirstPage,
       getPhoneNumbers: getPhoneNumbers,
-      getPhoneNumbersFilterByCountry: getPhoneNumbersFilterByCountry
+      getPhoneNumbersFiltered: getPhoneNumbersFiltered
     };
   },
   methods: {
@@ -19950,13 +19950,28 @@ __webpack_require__.r(__webpack_exports__);
         getPhoneNumbers(this.meta.current_page - 1);
       }
     },
-    filterCountry: function filterCountry(getPhoneNumbersFilterByCountry, country) {
+    changeCountry: function changeCountry(getPhoneNumbersFiltered, country) {
       this.country = country;
-      getPhoneNumbersFilterByCountry(country);
+      var query = this.prepareFilterQuery();
+      getPhoneNumbersFiltered(query);
     },
-    getAllPhoneNumbers: function getAllPhoneNumbers(getPhoneNumbers) {
-      this.country = "Select Country";
-      getPhoneNumbers();
+    changeState: function changeState(getPhoneNumbersFiltered, state) {
+      this.state = state;
+      var query = this.prepareFilterQuery();
+      getPhoneNumbersFiltered(query);
+    },
+    prepareFilterQuery: function prepareFilterQuery() {
+      var query = "";
+      var stateParameter = this.state == "Valid Phone Numbers" ? "" : "filter[state]=" + this.state;
+      var countryParameter = this.country == "Select Country" ? "" : "filter[country]=" + this.country;
+      query += stateParameter;
+      query += countryParameter;
+
+      if (stateParameter && countryParameter) {
+        query = "".concat(stateParameter, "&").concat(countryParameter);
+      }
+
+      return query;
     }
   },
   computed: {
@@ -19972,9 +19987,11 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     var meta = [];
     var country = "Select Country";
+    var state = "Valid Phone Numbers";
     return {
       meta: meta,
-      country: country
+      country: country,
+      state: state
     };
   }
 });
@@ -20146,13 +20163,28 @@ var _hoisted_10 = {
   href: "#"
 };
 var _hoisted_11 = {
-  "class": "phone_number_list_div"
+  "class": "dropdown col-2"
 };
 var _hoisted_12 = {
+  "class": "btn btn-sm btn-light dropdown-toggle",
+  href: "#",
+  role: "button",
+  id: "dropdownMenuLink",
+  "data-bs-toggle": "dropdown",
+  "aria-expanded": "false"
+};
+var _hoisted_13 = {
+  "class": "dropdown-menu",
+  "aria-labelledby": "dropdownMenuLink"
+};
+var _hoisted_14 = {
+  "class": "phone_number_list_div"
+};
+var _hoisted_15 = {
   "class": "table table-hover table-sm table-borderless table-striped phone_number_list_table"
 };
 
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", {
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", {
   "class": "thead-dark bg-secondary"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
   scope: "col"
@@ -20168,58 +20200,56 @@ var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_14 = {
-  scope: "row"
-};
-var _hoisted_15 = {
-  scope: "row"
-};
-var _hoisted_16 = {
-  "class": "phone_number_pagination_buttons"
-};
 var _hoisted_17 = {
-  "aria-label": "..."
+  scope: "row"
 };
 var _hoisted_18 = {
+  scope: "row"
+};
+var _hoisted_19 = {
+  "class": "phone_number_pagination_buttons"
+};
+var _hoisted_20 = {
+  "aria-label": "..."
+};
+var _hoisted_21 = {
   "class": "pagination"
 };
 
-var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "far fa-arrow-alt-circle-left"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", null, "Prev", -1
+var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", null, "Prev", -1
 /* HOISTED */
 );
 
-var _hoisted_21 = [_hoisted_19, _hoisted_20];
+var _hoisted_24 = [_hoisted_22, _hoisted_23];
 
-var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", null, "Next", -1
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", null, "Next", -1
 /* HOISTED */
 );
 
-var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "far fa-arrow-alt-circle-right"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_24 = [_hoisted_22, _hoisted_23];
+var _hoisted_27 = [_hoisted_25, _hoisted_26];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_ValidPhoneNumberDropDownComponent = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ValidPhoneNumberDropDownComponent");
-
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <CountryDropDownComponent/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.country), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
     onClick: _cache[0] || (_cache[0] = function ($event) {
-      return $options.getAllPhoneNumbers($setup.getPhoneNumbers);
+      return $options.changeCountry($setup.getPhoneNumbersFiltered, "Select Country");
     })
   }, _hoisted_8), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($options.countries, function (country) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
       onClick: function onClick($event) {
-        return $options.filterCountry($setup.getPhoneNumbersFilterByCountry, country);
+        return $options.changeCountry($setup.getPhoneNumbersFiltered, country);
       },
       key: country
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(country), 1
@@ -20229,12 +20259,32 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     , _hoisted_9);
   }), 128
   /* KEYED_FRAGMENT */
-  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ValidPhoneNumberDropDownComponent)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_12, [_hoisted_13, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.phoneNumbers.data, function (phoneNumber) {
+  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <ValidPhoneNumberDropDownComponent/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.state), 1
+  /* TEXT */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    onClick: _cache[1] || (_cache[1] = function ($event) {
+      return $options.changeState($setup.getPhoneNumbersFiltered, "Valid Phone Numbers");
+    }),
+    "class": "dropdown-item",
+    href: "#"
+  }, "All")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    onClick: _cache[2] || (_cache[2] = function ($event) {
+      return $options.changeState($setup.getPhoneNumbersFiltered, "ok");
+    }),
+    "class": "dropdown-item",
+    href: "#"
+  }, "Valid")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    onClick: _cache[3] || (_cache[3] = function ($event) {
+      return $options.changeState($setup.getPhoneNumbersFiltered, "nok");
+    }),
+    "class": "dropdown-item",
+    href: "#"
+  }, "InValid")])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_15, [_hoisted_16, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.phoneNumbers.data, function (phoneNumber) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tbody", {
       key: phoneNumber.id
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(phoneNumber.id), 1
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", _hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(phoneNumber.id), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(phoneNumber.country), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(phoneNumber.country), 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(phoneNumber.state), 1
     /* TEXT */
@@ -20245,23 +20295,23 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     )])]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <PhoneNumberPaginationComponent :phoneNumbers=\"phoneNumbers\"/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-    onClick: _cache[1] || (_cache[1] = function ($event) {
+  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <PhoneNumberPaginationComponent :phoneNumbers=\"phoneNumbers\"/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+    onClick: _cache[4] || (_cache[4] = function ($event) {
       return $options.previousButton($setup.getPhoneNumbers);
     }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([{
       unClickable: $setup.isFirstPage
     }, "btn btn-sm page-link previous_item page-item d-flex"])
-  }, _hoisted_21, 2
+  }, _hoisted_24, 2
   /* CLASS */
   )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-    onClick: _cache[2] || (_cache[2] = function ($event) {
+    onClick: _cache[5] || (_cache[5] = function ($event) {
       return $options.nextButton($setup.getPhoneNumbers);
     }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([{
       unClickable: $setup.isLastPage
     }, "btn btn-sm page-link next_item page-item d-flex"])
-  }, _hoisted_24, 2
+  }, _hoisted_27, 2
   /* CLASS */
   )])])])])]);
 }
@@ -20494,15 +20544,15 @@ function useCompanies() {
     };
   }();
 
-  var getPhoneNumbersFilterByCountry = /*#__PURE__*/function () {
-    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(country) {
+  var getPhoneNumbersFiltered = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(query) {
       var response;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
               _context2.next = 2;
-              return axios__WEBPACK_IMPORTED_MODULE_2___default().get('/api/phoneNumbers?filter[country]=' + country);
+              return axios__WEBPACK_IMPORTED_MODULE_2___default().get('/api/phoneNumbers?' + query);
 
             case 2:
               response = _context2.sent;
@@ -20517,7 +20567,7 @@ function useCompanies() {
       }, _callee2);
     }));
 
-    return function getPhoneNumbersFilterByCountry(_x) {
+    return function getPhoneNumbersFiltered(_x) {
       return _ref2.apply(this, arguments);
     };
   }();
@@ -20540,7 +20590,7 @@ function useCompanies() {
     errors: errors,
     phoneNumbers: phoneNumbers,
     getPhoneNumbers: getPhoneNumbers,
-    getPhoneNumbersFilterByCountry: getPhoneNumbersFilterByCountry,
+    getPhoneNumbersFiltered: getPhoneNumbersFiltered,
     isLastPage: isLastPage,
     isFirstPage: isFirstPage
   };

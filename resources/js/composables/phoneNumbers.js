@@ -16,8 +16,8 @@ export default function useCompanies() {
         checkPages(response);
     }
 
-    const getPhoneNumbersFilterByCountry = async (country) => {
-        let response = await axios.get('/api/phoneNumbers?filter[country]='+country)
+    const getPhoneNumbersFiltered = async (query) => {
+        let response = await axios.get('/api/phoneNumbers?'+query)
         phoneNumbers.value = response.data.data
         checkPages(response);
     }
@@ -39,7 +39,7 @@ export default function useCompanies() {
         errors,
         phoneNumbers,
         getPhoneNumbers,
-        getPhoneNumbersFilterByCountry,
+        getPhoneNumbersFiltered,
         isLastPage,
         isFirstPage,
     }

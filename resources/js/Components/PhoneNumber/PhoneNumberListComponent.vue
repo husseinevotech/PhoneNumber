@@ -9,12 +9,24 @@
                 </a>
 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li @click="getAllPhoneNumbers(getPhoneNumbers)" ><a class="dropdown-item" href="#">All</a></li>
-                    <li @click="filterCountry(getPhoneNumbersFilterByCountry, country)" v-for="country in countries" :key="country"><a class="dropdown-item" href="#">{{country}}</a></li>
+                    <li @click="changeCountry(getPhoneNumbersFiltered, `Select Country`)" ><a class="dropdown-item" href="#">All</a></li>
+                    <li @click="changeCountry(getPhoneNumbersFiltered, country)" v-for="country in countries" :key="country"><a class="dropdown-item" href="#">{{country}}</a></li>
                 </ul>
             </div>
 
-            <ValidPhoneNumberDropDownComponent/>
+            <!-- <ValidPhoneNumberDropDownComponent/> -->
+            <div class="dropdown col-2">
+                <a class="btn btn-sm btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{state}}
+                </a>
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a @click="changeState(getPhoneNumbersFiltered, `Valid Phone Numbers`)" class="dropdown-item" href="#">All</a></li>
+                    <li><a @click="changeState(getPhoneNumbersFiltered, `ok`)" class="dropdown-item" href="#">Valid</a></li>
+                    <li><a @click="changeState(getPhoneNumbersFiltered, `nok`)" class="dropdown-item" href="#">InValid</a></li>
+                </ul>
+            </div>
+
         </div>
         <div class="phone_number_list_div">
             <table class="table table-hover table-sm table-borderless table-striped phone_number_list_table">
@@ -76,7 +88,7 @@ import { onMounted } from 'vue';
 
 export default {
     setup() {
-        const { phoneNumbers, getPhoneNumbers, getPhoneNumbersFilterByCountry, isLastPage, isFirstPage } = usephoneNumbers()
+        const { phoneNumbers, getPhoneNumbers, getPhoneNumbersFiltered, isLastPage, isFirstPage } = usephoneNumbers()
 
         onMounted(getPhoneNumbers)
 
@@ -85,7 +97,7 @@ export default {
             isLastPage,
             isFirstPage,
             getPhoneNumbers,
-            getPhoneNumbersFilterByCountry
+            getPhoneNumbersFiltered
         }
     },
     methods:{
@@ -101,13 +113,27 @@ export default {
                 getPhoneNumbers(this.meta.current_page-1);
             }
         },
-        filterCountry(getPhoneNumbersFilterByCountry, country){
+        changeCountry(getPhoneNumbersFiltered, country){
             this.country = country;
-            getPhoneNumbersFilterByCountry(country);
+            let query = this.prepareFilterQuery();
+            getPhoneNumbersFiltered(query);
         },
-        getAllPhoneNumbers(getPhoneNumbers){
-            this.country = "Select Country";
-            getPhoneNumbers();
+        changeState(getPhoneNumbersFiltered, state){
+            this.state = state;
+            let query = this.prepareFilterQuery();
+            getPhoneNumbersFiltered(query);
+        },
+        prepareFilterQuery(){
+            let query = "";
+            let stateParameter = this.state == "Valid Phone Numbers" ? "" : "filter[state]="+this.state;
+            let countryParameter = this.country == "Select Country" ? "" : "filter[country]="+this.country;
+
+            query += stateParameter;
+            query += countryParameter;
+            if(stateParameter && countryParameter){
+                query = `${stateParameter}&${countryParameter}`;
+            }
+            return query;
         }
     },
     computed:{
@@ -123,9 +149,11 @@ export default {
     data(){
         let meta = [];
         let country = "Select Country";
+        let state = "Valid Phone Numbers";
         return {
             meta,
-            country
+            country,
+            state,
         }
     }
 }
