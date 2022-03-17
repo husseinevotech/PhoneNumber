@@ -65,9 +65,14 @@ npm install
 npm run dev
 ```
 
-### Create sqlite database file for production in database folder file
-### Create sqlite database file for testing in database folder file
-
+> Create sqlite database file for production in database folder file
+```
+    choose database name yourself
+```
+> Create sqlite database file for testing in database folder file
+```
+    choose testing database name yourself
+```
 
 > Create .env file
 
@@ -92,7 +97,7 @@ DB_CONNECTION=sqlite
 #DB_USERNAME=root
 #DB_PASSWORD=
 
-change DB_DATABASE in .env.testing file to sqlite database name
+change DB_DATABASE in .env.testing file to sqlite testing database name
 ```
 
 > Migrate & Seed Database 
