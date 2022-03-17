@@ -32,7 +32,6 @@
             <table class="table table-hover table-sm table-borderless table-striped phone_number_list_table">
                 <thead class="thead-dark bg-secondary">
                     <tr>
-                        <th scope="col">ID</th>
                         <th scope="col">Country</th>
                         <th scope="col">State</th>
                         <th scope="col">Country Code</th>
@@ -41,7 +40,6 @@
                 </thead>
                 <tbody v-for="phoneNumber in phoneNumbers.data" :key="phoneNumber.id">
                     <tr>
-                        <th scope="row">{{ phoneNumber.id }}</th>
                         <th scope="row">{{ phoneNumber.country }}</th>
                         <td>{{ phoneNumber.state }}</td>
                         <td>{{ phoneNumber.country_code }}</td>

@@ -19869,30 +19869,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _composables_phoneNumbers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../composables/phoneNumbers */ "./resources/js/composables/phoneNumbers.js");
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  setup: function setup() {
-    var _usephoneNumbers = (0,_composables_phoneNumbers__WEBPACK_IMPORTED_MODULE_0__["default"])(),
-        getPhoneNumbers = _usephoneNumbers.getPhoneNumbers;
-
-    return {
-      getPhoneNumbers: getPhoneNumbers
-    };
-  },
-  methods: {
-    filterCountry: function filterCountry(getPhoneNumbers, country) {
-      var query = "&filter[country]=" + country;
-      console.log(query);
-      getPhoneNumbers(1, query);
-    }
-  },
-  computed: {
-    countries: function countries() {
-      return this.$store.getters.countries;
-    }
-  }
-});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
 
@@ -20088,21 +20065,53 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "dropdown col-2"
 };
-
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+var _hoisted_2 = {
   "class": "btn btn-sm btn-light dropdown-toggle",
   href: "#",
   role: "button",
   id: "dropdownMenuLink",
   "data-bs-toggle": "dropdown",
   "aria-expanded": "false"
-}, " Select Country ", -1
+};
+var _hoisted_3 = {
+  "class": "dropdown-menu",
+  "aria-labelledby": "dropdownMenuLink"
+};
+
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  "class": "dropdown-item",
+  href: "#"
+}, "All", -1
 /* HOISTED */
 );
 
-var _hoisted_3 = [_hoisted_2];
+var _hoisted_5 = [_hoisted_4];
+var _hoisted_6 = ["onClick"];
+var _hoisted_7 = {
+  "class": "dropdown-item",
+  href: "#"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_3);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.country), 1
+  /* TEXT */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+    onClick: _cache[0] || (_cache[0] = function ($event) {
+      return _ctx.changeCountry(_ctx.getPhoneNumbersFiltered, "Select Country");
+    })
+  }, _hoisted_5), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.countries, function (country) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
+      onClick: function onClick($event) {
+        return _ctx.changeCountry(_ctx.getPhoneNumbersFiltered, country);
+      },
+      key: country
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(country), 1
+    /* TEXT */
+    )], 8
+    /* PROPS */
+    , _hoisted_6);
+  }), 128
+  /* KEYED_FRAGMENT */
+  ))])]);
 }
 
 /***/ }),
@@ -20188,8 +20197,6 @@ var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "class": "thead-dark bg-secondary"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
   scope: "col"
-}, "ID"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
-  scope: "col"
 }, "Country"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
   scope: "col"
 }, "State"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
@@ -20204,41 +20211,38 @@ var _hoisted_17 = {
   scope: "row"
 };
 var _hoisted_18 = {
-  scope: "row"
-};
-var _hoisted_19 = {
   "class": "phone_number_pagination_buttons"
 };
-var _hoisted_20 = {
+var _hoisted_19 = {
   "aria-label": "..."
 };
-var _hoisted_21 = {
+var _hoisted_20 = {
   "class": "pagination"
 };
 
-var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "far fa-arrow-alt-circle-left"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", null, "Prev", -1
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", null, "Prev", -1
 /* HOISTED */
 );
 
-var _hoisted_24 = [_hoisted_22, _hoisted_23];
+var _hoisted_23 = [_hoisted_21, _hoisted_22];
 
-var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", null, "Next", -1
+var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", null, "Next", -1
 /* HOISTED */
 );
 
-var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "far fa-arrow-alt-circle-right"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_27 = [_hoisted_25, _hoisted_26];
+var _hoisted_26 = [_hoisted_24, _hoisted_25];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <CountryDropDownComponent/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.country), 1
   /* TEXT */
@@ -20282,9 +20286,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, "InValid")])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_15, [_hoisted_16, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.phoneNumbers.data, function (phoneNumber) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tbody", {
       key: phoneNumber.id
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", _hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(phoneNumber.id), 1
-    /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(phoneNumber.country), 1
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", _hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(phoneNumber.country), 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(phoneNumber.state), 1
     /* TEXT */
@@ -20295,14 +20297,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     )])]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <PhoneNumberPaginationComponent :phoneNumbers=\"phoneNumbers\"/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <PhoneNumberPaginationComponent :phoneNumbers=\"phoneNumbers\"/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
     onClick: _cache[4] || (_cache[4] = function ($event) {
       return $options.previousButton($setup.getPhoneNumbers);
     }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([{
       unClickable: $setup.isFirstPage
     }, "btn btn-sm page-link previous_item page-item d-flex"])
-  }, _hoisted_24, 2
+  }, _hoisted_23, 2
   /* CLASS */
   )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
     onClick: _cache[5] || (_cache[5] = function ($event) {
@@ -20311,7 +20313,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([{
       unClickable: $setup.isLastPage
     }, "btn btn-sm page-link next_item page-item d-flex"])
-  }, _hoisted_27, 2
+  }, _hoisted_26, 2
   /* CLASS */
   )])])])])]);
 }
@@ -20506,12 +20508,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
-
 function useCompanies() {
   var phoneNumbers = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(["abc"]);
   var isLastPage = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(false);
   var isFirstPage = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(true);
-  var errors = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(''); // const router = useRouter()
 
   var getPhoneNumbers = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -20587,7 +20587,6 @@ function useCompanies() {
   }
 
   return {
-    errors: errors,
     phoneNumbers: phoneNumbers,
     getPhoneNumbers: getPhoneNumbers,
     getPhoneNumbersFiltered: getPhoneNumbersFiltered,

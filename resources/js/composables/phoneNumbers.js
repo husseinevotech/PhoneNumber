@@ -1,14 +1,10 @@
 import { ref } from 'vue'
 import axios from 'axios'
-import { useRouter } from 'vue-router'
 
 export default function useCompanies() {
     const phoneNumbers = ref(["abc"])
     const isLastPage = ref(false)
     const isFirstPage = ref(true)
-
-    const errors = ref('')
-    // const router = useRouter()
 
     const getPhoneNumbers = async (page = 1) => {
         let response = await axios.get('/api/phoneNumbers?page='+page)
@@ -36,7 +32,6 @@ export default function useCompanies() {
     }
 
     return {
-        errors,
         phoneNumbers,
         getPhoneNumbers,
         getPhoneNumbersFiltered,

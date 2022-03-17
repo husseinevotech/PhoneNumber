@@ -58,7 +58,7 @@
     flex:2
 }
 
-.unClickable{
+.phone_number_pagination_buttons .unClickable{
     cursor: not-allowed;
     background-color: rgb(155, 155, 155);
 }
