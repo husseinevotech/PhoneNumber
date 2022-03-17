@@ -67,11 +67,11 @@ npm run dev
 
 > Create sqlite database file for production in database folder file
 ```
-    choose database name yourself
+choose database name yourself
 ```
 > Create sqlite database file for testing in database folder file
 ```
-    choose testing database name yourself
+choose testing database name yourself
 ```
 
 > Create .env file
