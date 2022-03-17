@@ -4,9 +4,7 @@
             Select Country
         </a>
 
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li @click="filterCountry(getPhoneNumbers, country)" v-for="country in countries" :key="country"><a class="dropdown-item" href="#">{{country}}</a></li>
-        </ul>
+
     </div>
 </template>
 

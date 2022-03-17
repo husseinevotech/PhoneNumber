@@ -5,10 +5,11 @@
             <!-- <CountryDropDownComponent/> -->
             <div class="dropdown col-2">
                 <a class="btn btn-sm btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                    Select Country
+                    {{country}}
                 </a>
 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li @click="filterCountry(getPhoneNumbers, ``)" ><a class="dropdown-item" href="#">All</a></li>
                     <li @click="filterCountry(getPhoneNumbers, country)" v-for="country in countries" :key="country"><a class="dropdown-item" href="#">{{country}}</a></li>
                 </ul>
             </div>
@@ -101,7 +102,7 @@ export default {
         },
         filterCountry(getPhoneNumbers, country){
             let query = "&filter[country]="+country;
-            console.log(query);
+            this.country = country == "" ? "Select Country" : country;
             getPhoneNumbers(1, query);
         }
     },
@@ -117,8 +118,10 @@ export default {
     },
     data(){
         let meta = [];
+        let country = "Select Country";
         return {
-            meta
+            meta,
+            country
         }
     }
 }
