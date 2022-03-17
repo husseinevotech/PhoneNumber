@@ -33,17 +33,18 @@
             <nav aria-label="...">
                 <ul class="pagination">
                     <div @click="previousButton(getPhoneNumbers)">
-                        <li class="previous_item page-item">
-                            <a class="page-link btn btn-sm">Prev</a>
+                        <li class="btn btn-sm page-link previous_item page-item d-flex">
+                            <i class='far fa-arrow-alt-circle-left'></i>
+                            <a>Prev</a>
                         </li>
-                        <i class='far fa-arrow-alt-circle-left'></i>
+
                     </div>
 
                     <div @click="nextButton(getPhoneNumbers)">
-                        <li class="next_item page-item">
-                            <a class="page-link btn btn-sm">Next</a>
+                        <li class="btn btn-sm page-link next_item page-item d-flex">
+                            <a>Next</a>
+                            <i class='far fa-arrow-alt-circle-right'></i>
                         </li>
-                        <i class='far fa-arrow-alt-circle-right'></i>
                     </div>
 
                 </ul>

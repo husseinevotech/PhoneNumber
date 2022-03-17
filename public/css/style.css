@@ -34,21 +34,18 @@
 }
 
 .phone_number_pagination_buttons{
-    float:right;
-}
-.phone_number_pagination_buttons li{
-    margin: 0px 5px 0px 5px;
-    width: 100px;
+    display: flex;
+    justify-content: end;
 }
 
-.phone_number_pagination_buttons .fa-arrow-alt-circle-left{
+/* .phone_number_pagination_buttons .fa-arrow-alt-circle-left{
     float: left;
     position: relative;
     left:10%;
     bottom:50%
-}
+} */
 
-.phone_number_pagination_buttons .fa-arrow-alt-circle-right{
+/* .phone_number_pagination_buttons .fa-arrow-alt-circle-right{
     float: right;
     position: relative;
     right:20%;
@@ -57,21 +54,27 @@
 
 .phone_number_pagination_buttons .next_item{
     float: left;
-}
+} */
 
-.phone_number_pagination_buttons .prev_item{
+/* .phone_number_pagination_buttons .prev_item{
     float: right;
-}
-.phone_number_pagination_buttons a{
+} */
+.phone_number_pagination_buttons li{
     box-shadow: 2px 3px;
     color:black;
     height: 30px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    margin: 0px 5px 0px 5px;
+    width: 100px;
 }
 
-.phone_number_pagination_buttons a:hover{
-    color:black;
-    background-color: unset;
+.phone_number_pagination_buttons li:hover{
+    background-color: rgb(155, 155, 155);
+    color:black
+}
+
+.phone_number_pagination_buttons a{
+    flex:2
 }
