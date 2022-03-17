@@ -19934,6 +19934,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     changeState: function changeState(getPhoneNumbersFiltered, state) {
       this.state = state;
+      this.stateMsg = this.state == "ok" ? "Valid" : this.state == "nok" ? "InValid" : "Valid Phone Numbers";
       var query = this.prepareFilterQuery();
       getPhoneNumbersFiltered(query);
     },
@@ -19965,10 +19966,12 @@ __webpack_require__.r(__webpack_exports__);
     var meta = [];
     var country = "Select Country";
     var state = "Valid Phone Numbers";
+    var stateMsg = "Valid Phone Numbers";
     return {
       meta: meta,
       country: country,
-      state: state
+      state: state,
+      stateMsg: stateMsg
     };
   }
 });
@@ -20263,7 +20266,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     , _hoisted_9);
   }), 128
   /* KEYED_FRAGMENT */
-  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <ValidPhoneNumberDropDownComponent/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.state), 1
+  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <ValidPhoneNumberDropDownComponent/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.stateMsg), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     onClick: _cache[1] || (_cache[1] = function ($event) {

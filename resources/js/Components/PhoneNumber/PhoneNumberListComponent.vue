@@ -17,7 +17,7 @@
             <!-- <ValidPhoneNumberDropDownComponent/> -->
             <div class="dropdown col-2">
                 <a class="btn btn-sm btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                    {{state}}
+                    {{stateMsg}}
                 </a>
 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -118,6 +118,7 @@ export default {
         },
         changeState(getPhoneNumbersFiltered, state){
             this.state = state;
+            this.stateMsg = this.state == "ok" ? "Valid" : this.state == "nok" ? "InValid" : "Valid Phone Numbers"
             let query = this.prepareFilterQuery();
             getPhoneNumbersFiltered(query);
         },
@@ -148,10 +149,12 @@ export default {
         let meta = [];
         let country = "Select Country";
         let state = "Valid Phone Numbers";
+        let stateMsg = "Valid Phone Numbers";
         return {
             meta,
             country,
             state,
+            stateMsg,
         }
     }
 }
