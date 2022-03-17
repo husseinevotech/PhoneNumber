@@ -111,3 +111,9 @@ php artisan migrate --seed
 ``` bash
 php artisan key:generate
 ```
+
+> Run On Local Machine
+
+``` bash
+php artisan serve
+```
