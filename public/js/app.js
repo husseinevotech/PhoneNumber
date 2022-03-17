@@ -19880,7 +19880,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ["phoneNumbersMeta"],
+  methods: {
+    nextButton: function nextButton() {
+      console.log(this.phoneNumbersMeta);
+    }
+  }
+});
 
 /***/ }),
 
@@ -20042,7 +20049,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     )])]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_PhoneNumberPaginationComponent)]);
+  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_PhoneNumberPaginationComponent, {
+    phoneNumbersMeta: $setup.phoneNumbers.meta
+  }, null, 8
+  /* PROPS */
+  , ["phoneNumbersMeta"])]);
 }
 
 /***/ }),
@@ -20063,12 +20074,44 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "phone_number_pagination_buttons"
 };
+var _hoisted_2 = {
+  "aria-label": "..."
+};
+var _hoisted_3 = {
+  "class": "pagination"
+};
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<nav aria-label=\"...\"><ul class=\"pagination\"><div><li class=\"previous_item page-item\"><a class=\"page-link btn btn-sm\">Prev</a></li><i class=\"far fa-arrow-alt-circle-left\"></i></div><div><li class=\"next_item page-item\"><a class=\"page-link btn btn-sm\">Next</a></li><i class=\"far fa-arrow-alt-circle-right\"></i></div></ul></nav>", 1);
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+  "class": "previous_item page-item"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  "class": "page-link btn btn-sm"
+}, "Prev")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "far fa-arrow-alt-circle-left"
+})], -1
+/* HOISTED */
+);
 
-var _hoisted_3 = [_hoisted_2];
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+  "class": "next_item page-item"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  "class": "page-link btn btn-sm"
+}, "Next")], -1
+/* HOISTED */
+);
+
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "far fa-arrow-alt-circle-right"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_7 = [_hoisted_5, _hoisted_6];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_3);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    onClick: _cache[0] || (_cache[0] = function () {
+      return $options.nextButton && $options.nextButton.apply($options, arguments);
+    })
+  }, _hoisted_7)])])]);
 }
 
 /***/ }),
@@ -20205,7 +20248,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 function useCompanies() {
-  var phoneNumbers = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)([]);
+  var phoneNumbers = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(["abc"]);
   var errors = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(''); // const router = useRouter()
 
   var getPhoneNumbers = /*#__PURE__*/function () {

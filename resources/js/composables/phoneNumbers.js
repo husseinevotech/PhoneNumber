@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useRouter } from 'vue-router'
 
 export default function useCompanies() {
-    const phoneNumbers = ref([])
+    const phoneNumbers = ref(["abc"])
 
     const errors = ref('')
     // const router = useRouter()

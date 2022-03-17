@@ -9,7 +9,7 @@
                     <i class='far fa-arrow-alt-circle-left'></i>
                 </div>
 
-                <div>
+                <div @click="nextButton">
                     <li class="next_item page-item">
                         <a class="page-link btn btn-sm">Next</a>
                     </li>
@@ -24,6 +24,13 @@
 
 <script>
 export default {
-
+    props:[
+        "phoneNumbersMeta"
+    ],
+    methods:{
+        nextButton(){
+            console.log(this.phoneNumbersMeta);
+        }
+    }
 }
 </script>

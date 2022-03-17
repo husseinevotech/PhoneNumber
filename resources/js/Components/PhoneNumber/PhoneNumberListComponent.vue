@@ -26,7 +26,7 @@
             </table>
         </div>
 
-        <PhoneNumberPaginationComponent/>
+        <PhoneNumberPaginationComponent :phoneNumbersMeta="phoneNumbers.meta"/>
 
     </div>
 </template>
