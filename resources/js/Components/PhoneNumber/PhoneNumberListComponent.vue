@@ -54,7 +54,7 @@
             <nav aria-label="...">
                 <ul class="pagination">
                     <div >
-                        <li @click="previousButton(getPhoneNumbers)" :class="{unClickable :isFirstPage}" class="btn btn-sm page-link previous_item page-item d-flex">
+                        <li title="previous page" @click="previousButton(getPhoneNumbers)" :class="{unClickable :isFirstPage}" class="btn btn-sm page-link previous_item page-item d-flex">
                             <i class='far fa-arrow-alt-circle-left'></i>
                             <a>Prev</a>
                         </li>
@@ -62,7 +62,7 @@
                     </div>
 
                     <div>
-                        <li @click="nextButton(getPhoneNumbers)" :class="{unClickable :isLastPage}" class="btn btn-sm page-link next_item page-item d-flex">
+                        <li title="next page" @click="nextButton(getPhoneNumbers)" :class="{unClickable :isLastPage}" class="btn btn-sm page-link next_item page-item d-flex">
                             <a>Next</a>
                             <i class='far fa-arrow-alt-circle-right'></i>
                         </li>
@@ -76,10 +76,6 @@
 </template>
 
 <script>
-import CountryDropDownComponent from '@/components/PhoneNumber/CountryDropDownComponent.vue';
-import ValidPhoneNumberDropDownComponent from '@/components/PhoneNumber/ValidPhoneNumberDropDownComponent.vue';
-import PhoneNumberPaginationComponent from '@/components/PhoneNumber/PhoneNumberPaginationComponent.vue';
-
 import usephoneNumbers from '../../composables/phoneNumbers'
 import { onMounted } from 'vue';
 
@@ -139,11 +135,6 @@ export default {
         countries(){
             return this.$store.getters.countries;
         },
-    },
-    components:{
-        CountryDropDownComponent,
-        ValidPhoneNumberDropDownComponent,
-        PhoneNumberPaginationComponent
     },
     data(){
         let meta = [];

@@ -19858,21 +19858,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PhoneNumber/CountryDropDownComponent.vue?vue&type=script&lang=js":
-/*!******************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PhoneNumber/CountryDropDownComponent.vue?vue&type=script&lang=js ***!
-  \******************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PhoneNumber/PhoneNumberListComponent.vue?vue&type=script&lang=js":
 /*!******************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PhoneNumber/PhoneNumberListComponent.vue?vue&type=script&lang=js ***!
@@ -19884,26 +19869,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _components_PhoneNumber_CountryDropDownComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/components/PhoneNumber/CountryDropDownComponent.vue */ "./resources/js/components/PhoneNumber/CountryDropDownComponent.vue");
-/* harmony import */ var _components_PhoneNumber_ValidPhoneNumberDropDownComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/PhoneNumber/ValidPhoneNumberDropDownComponent.vue */ "./resources/js/components/PhoneNumber/ValidPhoneNumberDropDownComponent.vue");
-/* harmony import */ var _components_PhoneNumber_PhoneNumberPaginationComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/PhoneNumber/PhoneNumberPaginationComponent.vue */ "./resources/js/components/PhoneNumber/PhoneNumberPaginationComponent.vue");
-/* harmony import */ var _composables_phoneNumbers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../composables/phoneNumbers */ "./resources/js/composables/phoneNumbers.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-
-
-
+/* harmony import */ var _composables_phoneNumbers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../composables/phoneNumbers */ "./resources/js/composables/phoneNumbers.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   setup: function setup() {
-    var _usephoneNumbers = (0,_composables_phoneNumbers__WEBPACK_IMPORTED_MODULE_3__["default"])(),
+    var _usephoneNumbers = (0,_composables_phoneNumbers__WEBPACK_IMPORTED_MODULE_0__["default"])(),
         phoneNumbers = _usephoneNumbers.phoneNumbers,
         getPhoneNumbers = _usephoneNumbers.getPhoneNumbers,
         getPhoneNumbersFiltered = _usephoneNumbers.getPhoneNumbersFiltered,
         isLastPage = _usephoneNumbers.isLastPage,
         isFirstPage = _usephoneNumbers.isFirstPage;
 
-    (0,vue__WEBPACK_IMPORTED_MODULE_4__.onMounted)(getPhoneNumbers);
+    (0,vue__WEBPACK_IMPORTED_MODULE_1__.onMounted)(getPhoneNumbers);
     return {
       phoneNumbers: phoneNumbers,
       isLastPage: isLastPage,
@@ -19957,11 +19936,6 @@ __webpack_require__.r(__webpack_exports__);
       return this.$store.getters.countries;
     }
   },
-  components: {
-    CountryDropDownComponent: _components_PhoneNumber_CountryDropDownComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    ValidPhoneNumberDropDownComponent: _components_PhoneNumber_ValidPhoneNumberDropDownComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    PhoneNumberPaginationComponent: _components_PhoneNumber_PhoneNumberPaginationComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
-  },
   data: function data() {
     var meta = [];
     var country = "Select Country";
@@ -19975,59 +19949,6 @@ __webpack_require__.r(__webpack_exports__);
     };
   }
 });
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PhoneNumber/PhoneNumberPaginationComponent.vue?vue&type=script&lang=js":
-/*!************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PhoneNumber/PhoneNumberPaginationComponent.vue?vue&type=script&lang=js ***!
-  \************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _vue_runtime_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @vue/runtime-core */ "./node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js");
-/* harmony import */ var _composables_phoneNumbers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../composables/phoneNumbers */ "./resources/js/composables/phoneNumbers.js");
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  setup: function setup() {
-    var _usephoneNumbers = (0,_composables_phoneNumbers__WEBPACK_IMPORTED_MODULE_0__["default"])(),
-        phoneNumbers = _usephoneNumbers.phoneNumbers,
-        getPhoneNumbers = _usephoneNumbers.getPhoneNumbers;
-
-    (0,_vue_runtime_core__WEBPACK_IMPORTED_MODULE_1__.onMounted)(getPhoneNumbers);
-    return {
-      getPhoneNumbers: getPhoneNumbers,
-      phoneNumbers: phoneNumbers
-    };
-  },
-  props: ["phoneNumbers"],
-  methods: {
-    nextButton: function nextButton(getPhoneNumbers) {
-      console.log(this.phoneNumbers);
-      getPhoneNumbers(2);
-    }
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PhoneNumber/ValidPhoneNumberDropDownComponent.vue?vue&type=script&lang=js":
-/*!***************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PhoneNumber/ValidPhoneNumberDropDownComponent.vue?vue&type=script&lang=js ***!
-  \***************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
 
@@ -20048,73 +19969,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_view = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-view");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_view)]);
-}
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PhoneNumber/CountryDropDownComponent.vue?vue&type=template&id=310738ce":
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PhoneNumber/CountryDropDownComponent.vue?vue&type=template&id=310738ce ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render)
-/* harmony export */ });
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-
-var _hoisted_1 = {
-  "class": "dropdown col-2"
-};
-var _hoisted_2 = {
-  "class": "btn btn-sm btn-light dropdown-toggle",
-  href: "#",
-  role: "button",
-  id: "dropdownMenuLink",
-  "data-bs-toggle": "dropdown",
-  "aria-expanded": "false"
-};
-var _hoisted_3 = {
-  "class": "dropdown-menu",
-  "aria-labelledby": "dropdownMenuLink"
-};
-
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "dropdown-item",
-  href: "#"
-}, "All", -1
-/* HOISTED */
-);
-
-var _hoisted_5 = [_hoisted_4];
-var _hoisted_6 = ["onClick"];
-var _hoisted_7 = {
-  "class": "dropdown-item",
-  href: "#"
-};
-function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.country), 1
-  /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-    onClick: _cache[0] || (_cache[0] = function ($event) {
-      return _ctx.changeCountry(_ctx.getPhoneNumbersFiltered, "Select Country");
-    })
-  }, _hoisted_5), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.countries, function (country) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
-      onClick: function onClick($event) {
-        return _ctx.changeCountry(_ctx.getPhoneNumbersFiltered, country);
-      },
-      key: country
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(country), 1
-    /* TEXT */
-    )], 8
-    /* PROPS */
-    , _hoisted_6);
-  }), 128
-  /* KEYED_FRAGMENT */
-  ))])]);
 }
 
 /***/ }),
@@ -20301,6 +20155,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }), 128
   /* KEYED_FRAGMENT */
   ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <PhoneNumberPaginationComponent :phoneNumbers=\"phoneNumbers\"/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+    title: "previous page",
     onClick: _cache[4] || (_cache[4] = function ($event) {
       return $options.previousButton($setup.getPhoneNumbers);
     }),
@@ -20310,6 +20165,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, _hoisted_23, 2
   /* CLASS */
   )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+    title: "next page",
     onClick: _cache[5] || (_cache[5] = function ($event) {
       return $options.nextButton($setup.getPhoneNumbers);
     }),
@@ -20319,115 +20175,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, _hoisted_26, 2
   /* CLASS */
   )])])])])]);
-}
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PhoneNumber/PhoneNumberPaginationComponent.vue?vue&type=template&id=ff9837a2":
-/*!****************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PhoneNumber/PhoneNumberPaginationComponent.vue?vue&type=template&id=ff9837a2 ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render)
-/* harmony export */ });
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-
-var _hoisted_1 = {
-  "class": "phone_number_pagination_buttons"
-};
-var _hoisted_2 = {
-  "aria-label": "..."
-};
-var _hoisted_3 = {
-  "class": "pagination"
-};
-
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "previous_item page-item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "page-link btn btn-sm"
-}, "Prev")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "far fa-arrow-alt-circle-left"
-})], -1
-/* HOISTED */
-);
-
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "next_item page-item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "page-link btn btn-sm"
-}, "Next")], -1
-/* HOISTED */
-);
-
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "far fa-arrow-alt-circle-right"
-}, null, -1
-/* HOISTED */
-);
-
-var _hoisted_7 = [_hoisted_5, _hoisted_6];
-function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    onClick: _cache[0] || (_cache[0] = function ($event) {
-      return $options.nextButton($setup.getPhoneNumbers);
-    })
-  }, _hoisted_7)])])]);
-}
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PhoneNumber/ValidPhoneNumberDropDownComponent.vue?vue&type=template&id=424ef4c4":
-/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PhoneNumber/ValidPhoneNumberDropDownComponent.vue?vue&type=template&id=424ef4c4 ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render)
-/* harmony export */ });
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-
-var _hoisted_1 = {
-  "class": "dropdown col-2"
-};
-
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "btn btn-sm btn-light dropdown-toggle",
-  href: "#",
-  role: "button",
-  id: "dropdownMenuLink",
-  "data-bs-toggle": "dropdown",
-  "aria-expanded": "false"
-}, " Valid Phone Numbers ", -1
-/* HOISTED */
-);
-
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
-  "class": "dropdown-menu",
-  "aria-labelledby": "dropdownMenuLink"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "dropdown-item",
-  href: "#"
-}, "Action")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "dropdown-item",
-  href: "#"
-}, "Another action")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "dropdown-item",
-  href: "#"
-}, "Something else here")])], -1
-/* HOISTED */
-);
-
-var _hoisted_4 = [_hoisted_2, _hoisted_3];
-function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_4);
 }
 
 /***/ }),
@@ -39588,34 +39335,6 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/js/components/PhoneNumber/CountryDropDownComponent.vue":
-/*!**************************************************************************!*\
-  !*** ./resources/js/components/PhoneNumber/CountryDropDownComponent.vue ***!
-  \**************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _CountryDropDownComponent_vue_vue_type_template_id_310738ce__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CountryDropDownComponent.vue?vue&type=template&id=310738ce */ "./resources/js/components/PhoneNumber/CountryDropDownComponent.vue?vue&type=template&id=310738ce");
-/* harmony import */ var _CountryDropDownComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CountryDropDownComponent.vue?vue&type=script&lang=js */ "./resources/js/components/PhoneNumber/CountryDropDownComponent.vue?vue&type=script&lang=js");
-/* harmony import */ var D_Hussein_projects_PhoneNumbers_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
-
-
-
-
-;
-const __exports__ = /*#__PURE__*/(0,D_Hussein_projects_PhoneNumbers_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_CountryDropDownComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_CountryDropDownComponent_vue_vue_type_template_id_310738ce__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/PhoneNumber/CountryDropDownComponent.vue"]])
-/* hot reload */
-if (false) {}
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
-
-/***/ }),
-
 /***/ "./resources/js/components/PhoneNumber/PhoneNumberListComponent.vue":
 /*!**************************************************************************!*\
   !*** ./resources/js/components/PhoneNumber/PhoneNumberListComponent.vue ***!
@@ -39644,62 +39363,6 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/js/components/PhoneNumber/PhoneNumberPaginationComponent.vue":
-/*!********************************************************************************!*\
-  !*** ./resources/js/components/PhoneNumber/PhoneNumberPaginationComponent.vue ***!
-  \********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _PhoneNumberPaginationComponent_vue_vue_type_template_id_ff9837a2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PhoneNumberPaginationComponent.vue?vue&type=template&id=ff9837a2 */ "./resources/js/components/PhoneNumber/PhoneNumberPaginationComponent.vue?vue&type=template&id=ff9837a2");
-/* harmony import */ var _PhoneNumberPaginationComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PhoneNumberPaginationComponent.vue?vue&type=script&lang=js */ "./resources/js/components/PhoneNumber/PhoneNumberPaginationComponent.vue?vue&type=script&lang=js");
-/* harmony import */ var D_Hussein_projects_PhoneNumbers_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
-
-
-
-
-;
-const __exports__ = /*#__PURE__*/(0,D_Hussein_projects_PhoneNumbers_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_PhoneNumberPaginationComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_PhoneNumberPaginationComponent_vue_vue_type_template_id_ff9837a2__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/PhoneNumber/PhoneNumberPaginationComponent.vue"]])
-/* hot reload */
-if (false) {}
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
-
-/***/ }),
-
-/***/ "./resources/js/components/PhoneNumber/ValidPhoneNumberDropDownComponent.vue":
-/*!***********************************************************************************!*\
-  !*** ./resources/js/components/PhoneNumber/ValidPhoneNumberDropDownComponent.vue ***!
-  \***********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _ValidPhoneNumberDropDownComponent_vue_vue_type_template_id_424ef4c4__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ValidPhoneNumberDropDownComponent.vue?vue&type=template&id=424ef4c4 */ "./resources/js/components/PhoneNumber/ValidPhoneNumberDropDownComponent.vue?vue&type=template&id=424ef4c4");
-/* harmony import */ var _ValidPhoneNumberDropDownComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ValidPhoneNumberDropDownComponent.vue?vue&type=script&lang=js */ "./resources/js/components/PhoneNumber/ValidPhoneNumberDropDownComponent.vue?vue&type=script&lang=js");
-/* harmony import */ var D_Hussein_projects_PhoneNumbers_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
-
-
-
-
-;
-const __exports__ = /*#__PURE__*/(0,D_Hussein_projects_PhoneNumbers_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ValidPhoneNumberDropDownComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ValidPhoneNumberDropDownComponent_vue_vue_type_template_id_424ef4c4__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/PhoneNumber/ValidPhoneNumberDropDownComponent.vue"]])
-/* hot reload */
-if (false) {}
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
-
-/***/ }),
-
 /***/ "./resources/js/components/App.vue?vue&type=script&lang=js":
 /*!*****************************************************************!*\
   !*** ./resources/js/components/App.vue?vue&type=script&lang=js ***!
@@ -39712,22 +39375,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_App_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_App_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./App.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/App.vue?vue&type=script&lang=js");
- 
-
-/***/ }),
-
-/***/ "./resources/js/components/PhoneNumber/CountryDropDownComponent.vue?vue&type=script&lang=js":
-/*!**************************************************************************************************!*\
-  !*** ./resources/js/components/PhoneNumber/CountryDropDownComponent.vue?vue&type=script&lang=js ***!
-  \**************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_CountryDropDownComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_CountryDropDownComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./CountryDropDownComponent.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PhoneNumber/CountryDropDownComponent.vue?vue&type=script&lang=js");
  
 
 /***/ }),
@@ -39748,38 +39395,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/PhoneNumber/PhoneNumberPaginationComponent.vue?vue&type=script&lang=js":
-/*!********************************************************************************************************!*\
-  !*** ./resources/js/components/PhoneNumber/PhoneNumberPaginationComponent.vue?vue&type=script&lang=js ***!
-  \********************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_PhoneNumberPaginationComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_PhoneNumberPaginationComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./PhoneNumberPaginationComponent.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PhoneNumber/PhoneNumberPaginationComponent.vue?vue&type=script&lang=js");
- 
-
-/***/ }),
-
-/***/ "./resources/js/components/PhoneNumber/ValidPhoneNumberDropDownComponent.vue?vue&type=script&lang=js":
-/*!***********************************************************************************************************!*\
-  !*** ./resources/js/components/PhoneNumber/ValidPhoneNumberDropDownComponent.vue?vue&type=script&lang=js ***!
-  \***********************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ValidPhoneNumberDropDownComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ValidPhoneNumberDropDownComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ValidPhoneNumberDropDownComponent.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PhoneNumber/ValidPhoneNumberDropDownComponent.vue?vue&type=script&lang=js");
- 
-
-/***/ }),
-
 /***/ "./resources/js/components/App.vue?vue&type=template&id=332fccf4":
 /*!***********************************************************************!*\
   !*** ./resources/js/components/App.vue?vue&type=template&id=332fccf4 ***!
@@ -39796,22 +39411,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/PhoneNumber/CountryDropDownComponent.vue?vue&type=template&id=310738ce":
-/*!********************************************************************************************************!*\
-  !*** ./resources/js/components/PhoneNumber/CountryDropDownComponent.vue?vue&type=template&id=310738ce ***!
-  \********************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_CountryDropDownComponent_vue_vue_type_template_id_310738ce__WEBPACK_IMPORTED_MODULE_0__.render)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_CountryDropDownComponent_vue_vue_type_template_id_310738ce__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./CountryDropDownComponent.vue?vue&type=template&id=310738ce */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PhoneNumber/CountryDropDownComponent.vue?vue&type=template&id=310738ce");
-
-
-/***/ }),
-
 /***/ "./resources/js/components/PhoneNumber/PhoneNumberListComponent.vue?vue&type=template&id=632930ab":
 /*!********************************************************************************************************!*\
   !*** ./resources/js/components/PhoneNumber/PhoneNumberListComponent.vue?vue&type=template&id=632930ab ***!
@@ -39824,38 +39423,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_PhoneNumberListComponent_vue_vue_type_template_id_632930ab__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_PhoneNumberListComponent_vue_vue_type_template_id_632930ab__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./PhoneNumberListComponent.vue?vue&type=template&id=632930ab */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PhoneNumber/PhoneNumberListComponent.vue?vue&type=template&id=632930ab");
-
-
-/***/ }),
-
-/***/ "./resources/js/components/PhoneNumber/PhoneNumberPaginationComponent.vue?vue&type=template&id=ff9837a2":
-/*!**************************************************************************************************************!*\
-  !*** ./resources/js/components/PhoneNumber/PhoneNumberPaginationComponent.vue?vue&type=template&id=ff9837a2 ***!
-  \**************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_PhoneNumberPaginationComponent_vue_vue_type_template_id_ff9837a2__WEBPACK_IMPORTED_MODULE_0__.render)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_PhoneNumberPaginationComponent_vue_vue_type_template_id_ff9837a2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./PhoneNumberPaginationComponent.vue?vue&type=template&id=ff9837a2 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PhoneNumber/PhoneNumberPaginationComponent.vue?vue&type=template&id=ff9837a2");
-
-
-/***/ }),
-
-/***/ "./resources/js/components/PhoneNumber/ValidPhoneNumberDropDownComponent.vue?vue&type=template&id=424ef4c4":
-/*!*****************************************************************************************************************!*\
-  !*** ./resources/js/components/PhoneNumber/ValidPhoneNumberDropDownComponent.vue?vue&type=template&id=424ef4c4 ***!
-  \*****************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ValidPhoneNumberDropDownComponent_vue_vue_type_template_id_424ef4c4__WEBPACK_IMPORTED_MODULE_0__.render)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ValidPhoneNumberDropDownComponent_vue_vue_type_template_id_424ef4c4__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ValidPhoneNumberDropDownComponent.vue?vue&type=template&id=424ef4c4 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PhoneNumber/ValidPhoneNumberDropDownComponent.vue?vue&type=template&id=424ef4c4");
 
 
 /***/ }),
