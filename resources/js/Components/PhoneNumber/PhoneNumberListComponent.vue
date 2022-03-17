@@ -2,7 +2,17 @@
     <div class="container">
         <h1 class="phone_numbers_title">Phone Numbers</h1>
         <div class="row phone_filters">
-            <CountryDropDownComponent/>
+            <!-- <CountryDropDownComponent/> -->
+            <div class="dropdown col-2">
+                <a class="btn btn-sm btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    Select Country
+                </a>
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li @click="filterCountry(getPhoneNumbers, country)" v-for="country in countries" :key="country"><a class="dropdown-item" href="#">{{country}}</a></li>
+                </ul>
+            </div>
+
             <ValidPhoneNumberDropDownComponent/>
         </div>
         <div class="phone_number_list_div">
@@ -88,7 +98,17 @@ export default {
             if(this.meta.current_page > 1){
                 getPhoneNumbers(this.meta.current_page-1);
             }
+        },
+        filterCountry(getPhoneNumbers, country){
+            let query = "&filter[country]="+country;
+            console.log(query);
+            getPhoneNumbers(1, query);
         }
+    },
+    computed:{
+        countries(){
+            return this.$store.getters.countries;
+        },
     },
     components:{
         CountryDropDownComponent,

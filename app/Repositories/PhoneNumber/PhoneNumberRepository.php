@@ -3,13 +3,15 @@
 namespace App\Repositories\PhoneNumber;
 
 use App\Models\PhoneNumber;
-
+use Spatie\QueryBuilder\QueryBuilder;
 
 class PhoneNumberRepository
 {
     public function getPhoneNumbersPaginated($pagination = 10)
     {
-        return PhoneNumber::paginate($pagination);
+        return QueryBuilder::for(PhoneNumber::class)
+        ->allowedFilters(["country"])
+        ->paginate($pagination);
     }
 
     public function getAllCounrties()

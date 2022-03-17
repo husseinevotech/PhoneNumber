@@ -5,16 +5,32 @@
         </a>
 
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li @click="filterCountry(getPhoneNumbers, country)" v-for="country in countries" :key="country"><a class="dropdown-item" href="#">{{country}}</a></li>
         </ul>
     </div>
 </template>
 
 
 <script>
+import usephoneNumbers from '../../composables/phoneNumbers'
 export default {
-
+    setup() {
+        const { getPhoneNumbers } = usephoneNumbers()
+        return {
+            getPhoneNumbers
+        }
+    },
+    methods:{
+        filterCountry(getPhoneNumbers, country){
+            let query = "&filter[country]="+country;
+            console.log(query);
+            getPhoneNumbers(1, query);
+        }
+    },
+    computed:{
+        countries(){
+            return this.$store.getters.countries;
+        },
+    }
 }
 </script>
