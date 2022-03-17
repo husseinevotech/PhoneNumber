@@ -40,3 +40,73 @@ A Single Page Application That Lists Phone Numbers
 
 ## Installation
 
+
+> Download Project
+
+``` bash
+https://github.com/hussienhewehii/PhoneNumber.git
+```
+
+> Install Composer Packages
+
+``` bash
+composer install
+```
+
+> Install Node Packages
+
+``` bash
+npm install
+```
+
+> Complite Node Packages
+
+``` bash
+npm run dev
+```
+
+> Create sqlite database file for production in database folder file
+> Create sqlite database file for testing in database folder file
+
+``` bash
+
+```
+
+
+> Create .env file
+
+``` bash
+cp .env.example .env
+```
+
+> Create .env.testing file
+
+``` bash
+cp .env.example .env.testing
+```
+
+> Configure .env files
+
+``` bash
+update both files to look like this:
+DB_CONNECTION=sqlite
+#DB_HOST=127.0.0.1
+#DB_PORT=3306
+#DB_DATABASE=laravel
+#DB_USERNAME=root
+#DB_PASSWORD=
+
+change DB_DATABASE in .env.testing file to sqlite database name
+```
+
+> Migrate & Seed Database 
+
+``` bash
+php artisan migrate --seed
+```
+
+> Generate Key
+
+``` bash
+php artisan key:generate
+```
