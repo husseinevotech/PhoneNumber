@@ -13,7 +13,7 @@ A Single Page Application That Lists Phone Numbers
     -   Country Code, 
     -   State(Valid or InValid),
     -   Number
-- Filters By:
+- Filtered By:
     - Country Name
     - State
 - Pagination.
